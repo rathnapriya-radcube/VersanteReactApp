@@ -1,9 +1,11 @@
 // in ActionProvider.jsx
 import React from "react";
+// import React, { useMemo } from "react";
 // import { createCustomMessage } from 'react-chatbot-kit';
 
 const ActionProvider = (props) => {
   const { state, createChatBotMessage, setState, children } = props;
+
   const handleHello = () => {
     const botMessage = createChatBotMessage("Hello. Nice to meet you.");
 
@@ -14,6 +16,11 @@ const ActionProvider = (props) => {
   };
 
   const handleYes = () => {
+    // const calculation = useMemo(() => {
+    //   console.log("Calling the optin from handle yes");
+    //   handleOptIn();
+    // }, [state.questionList]);
+
     let yesButton = document.getElementById(
       `button_yes_${state.currentQuestion}`
     );
@@ -27,6 +34,11 @@ const ActionProvider = (props) => {
 
     if (yesButton) {
       yesButton.disabled = true;
+      yesButton.onclick = null;
+      yesButton.removeAttribute("onclick");
+      yesButton.style.opacity = "0.5";
+      yesButton.style.cursor = "not-allowed";
+
       console.log(
         `button exists button_yes_${state.currentQuestion}`,
         yesButton
@@ -39,6 +51,11 @@ const ActionProvider = (props) => {
 
     if (noButton) {
       noButton.disabled = true;
+      noButton.onclick = null;
+      noButton.removeAttribute("onclick");
+      noButton.style.opacity = "0.5";
+      noButton.style.cursor = "not-allowed";
+
       console.log(`button exists button_no_${state.currentQuestion}`, noButton);
     }
     setState((prev) => {
@@ -110,6 +127,10 @@ const ActionProvider = (props) => {
       messages: [...prev.messages, botMessage],
     }));
   };
+  // const calculation = useMemo(() => {
+  //   console.log("Calling the optin from handle yes");
+  //   handleOptIn();
+  // }, [state.questionList]);
   // Put the handleHello function in the actions object to pass to the MessageParser
   return (
     <div>
