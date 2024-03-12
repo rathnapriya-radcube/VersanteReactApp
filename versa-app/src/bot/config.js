@@ -2,6 +2,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import logo from "../assets/images/profile.jpg"; // Import the image
 import GeneralOptions from "./widgets/GeneralOptions";
+import YNQuestions from "./widgets/YNQuestions";
 
 const botName = "Versa OSM Buddy";
 
@@ -37,10 +38,43 @@ const config = {
       backgroundColor: "#e6da85",
     },
   },
+  state: {
+    questionList: [
+      {
+        questionNumber: 1,
+        answer: "Unanswered",
+        question: "What is your name?",
+        skippable: false,
+        branching: {
+          yes: 2,
+          no: 3,
+        },
+      },
+      {
+        questionNumber: 2,
+        answer: "Unanswered",
+        question: "What is your age?",
+        skippable: false,
+        branching: {},
+      },
+      {
+        questionNumber: 3,
+        answer: "Unanswered",
+        question: "What is your occupation?",
+        skippable: false,
+        branching: {},
+      },
+    ],
+    currentQuestion: 1,
+  },
   widgets: [
     {
       widgetName: "generalOptions",
       widgetFunc: (props) => <GeneralOptions {...props} />,
+    },
+    {
+      widgetName: "ynQuestion",
+      widgetFunc: (props) => <YNQuestions {...props} />,
     },
   ],
   customComponents: {

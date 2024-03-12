@@ -2,6 +2,8 @@ import React from "react";
 import Options from "../Options/Options";
 
 const GeneralOptions = (props) => {
+  console.log("GeneralOptionsprops", props);
+
   const options = [
     {
       name: "Opt In",
@@ -10,12 +12,12 @@ const GeneralOptions = (props) => {
     },
     {
       name: "Opt Out",
-      handler: props.actionProvider.handleHello,
+      handler: props.actionProvider.handleOptOut,
       id: 2,
     },
     {
       name: "Know More",
-      handler: props.actionProvider.handleHello,
+      handler: props.actionProvider.handleKnowMore,
       id: 3,
     },
   ];
