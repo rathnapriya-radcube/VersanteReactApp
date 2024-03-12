@@ -16,7 +16,7 @@ const YNQuestions = (props) => {
   ];
   console.log("Ynprops", props, options);
 
-  return <Options options={options} />;
+  return <Options {...props} options={options} />;
 };
 
 export default YNQuestions;
