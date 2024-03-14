@@ -6,10 +6,20 @@ const CustomMessage = (props) => {
   console.log("custom message", props);
   const handleGetStarted = () => {
     console.log("Called handleGetStarted");
+    let outerWrapperContainer =
+      document.getElementsByClassName("outer-wrapper")[0];
+    console.log("Before", outerWrapperContainer);
+    outerWrapperContainer.style.display = "none";
+    console.log("After", outerWrapperContainer);
     props.actions.handleOptIn();
   };
   const handleKnowMoreClick = () => {
     console.log("Called handleKnowMoreClick");
+    let outerWrapperContainer =
+      document.getElementsByClassName("outer-wrapper")[0];
+    console.log("Before", outerWrapperContainer);
+    outerWrapperContainer.style.display = "none";
+    console.log("After", outerWrapperContainer);
     props.actions.handleKnowMore();
   };
   return (
