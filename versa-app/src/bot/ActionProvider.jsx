@@ -106,6 +106,7 @@ const ActionProvider = (props) => {
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
+      page: "Survey",
     }));
   };
   const handleOptOut = () => {
@@ -118,7 +119,7 @@ const ActionProvider = (props) => {
       messages: [...prev.messages, botMessage],
     }));
   };
-  const handleOptKnowMore = () => {
+  const handleKnowMore = () => {
     const botMessage = createChatBotMessage("You have selected Know More", {
       widget: "generalOptions",
     });
@@ -126,6 +127,7 @@ const ActionProvider = (props) => {
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
+      page: "Survey",
     }));
   };
   // const calculation = useMemo(() => {
@@ -141,7 +143,7 @@ const ActionProvider = (props) => {
             handleHello,
             handleOptIn,
             handleOptOut,
-            handleOptKnowMore,
+            handleKnowMore,
             handleYes,
             handleNo,
           },

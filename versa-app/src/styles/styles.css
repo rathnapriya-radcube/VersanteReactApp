@@ -109,3 +109,33 @@ height:100px;
   align-items: center; /* Vertically center the container */
   /* Full height of the viewport */
 }
+
+.header-outer-div-welcome-page {
+  background-color: #034efc;
+  padding: 5px;
+  color: white;
+}
+.header-para-welcome-page {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+.header-outer-div-survey-page {
+  background-color: #034efc;
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-para-survey-page {
+  text-align: center;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+.image-survey-page {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}

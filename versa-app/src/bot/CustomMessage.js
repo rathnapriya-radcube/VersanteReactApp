@@ -2,7 +2,16 @@ import React from "react";
 import smileyPic from "../assets/images/smiley-pic.png"; // Import the image
 import versaLogo from "../assets/images/versa-logo.png"; // Import the image
 import "../styles/styles.css";
-const CustomMessage = () => {
+const CustomMessage = (props) => {
+  console.log("custom message", props);
+  const handleGetStarted = () => {
+    console.log("Called handleGetStarted");
+    props.actions.handleOptIn();
+  };
+  const handleKnowMoreClick = () => {
+    console.log("Called handleKnowMoreClick");
+    props.actions.handleKnowMore();
+  };
   return (
     <div className="outer-wrapper">
       <div className="outer-container">
@@ -20,6 +29,7 @@ const CustomMessage = () => {
               interconnections, and it's "chance scores" for guided testing and
               care connections.
               <br></br>
+              <br></br>
               Spend only 6-10 minutes with me to get your chance score.
               Although, some questions may require more time and attention.
             </p>
@@ -27,10 +37,16 @@ const CustomMessage = () => {
               key="get-started"
               id="get-started"
               className="get-started-class"
+              onClick={handleGetStarted}
             >
               Get your Chance Score now
             </button>
-            <button key="know-more" id="know-more" className="know-more-class">
+            <button
+              key="know-more"
+              id="know-more"
+              className="know-more-class"
+              onClick={handleKnowMoreClick}
+            >
               Know More
             </button>
           </div>

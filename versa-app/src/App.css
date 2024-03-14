@@ -3,6 +3,19 @@
   overflow: scroll !important;
   height: 424px !important;
   background-color: rgb(234, 234, 234) !important;
+  position: relative;
+}
+/* .react-chatbot-kit-chat-container {
+  position: relative !important;
+  width: 375px !important;
+  margin: 0 auto !important;
+} */
+.react-chatbot-kit-chat-input-container {
+  position: sticky !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  z-index: 1;
 }
 
 /*Not needed 
