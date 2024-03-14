@@ -125,6 +125,7 @@ height:100px;
   padding: 5px;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -132,10 +133,14 @@ height:100px;
   text-align: center;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
+  padding-bottom: 5px;
 }
 .image-survey-page {
-  width: 50px;
-  height: 50px;
+  width: 50px !important;
+  height: 50px !important;
   border-radius: 50%;
   object-fit: cover;
+  position: absolute;
+  margin-bottom: -75px; /* Pull the image out of the parent div */
+  z-index: 1;
 }
