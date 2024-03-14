@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/images/profile.jpg"; // Import the image
 import { useState } from "react";
+import { usePageContext } from "../PageContext";
 const Header = (props) => {
   const botName = "OSMs Buddy";
-  console.log("Header props", props);
-  const [page, setPage] = useState("Survey");
+  const { page, setPage } = usePageContext();
+  console.log("Header props", props, "page");
+  //   const [page, setPage] = useState("Survey");
   // props.state.page === "welcome"
   return (
     <>

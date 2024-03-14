@@ -1,10 +1,13 @@
 // in ActionProvider.jsx
-import React from "react";
+// import React from "react";
 // import React, { useMemo } from "react";
 // import { createCustomMessage } from 'react-chatbot-kit';
-
+import React, { useState, useContext } from "react";
+import { usePageContext } from "../PageContext";
 const ActionProvider = (props) => {
   const { state, createChatBotMessage, setState, children } = props;
+  // const { page, setPage } = useContext(PageContext);
+  const { page, setPage } = usePageContext();
 
   const handleHello = () => {
     const botMessage = createChatBotMessage("Hello. Nice to meet you.");
@@ -85,6 +88,11 @@ const ActionProvider = (props) => {
   const handleNo = () => {};
 
   const handleOptIn = () => {
+    console.log("Handle optin started");
+    console.log("HandleOPtIn0 page", page);
+    setPage("Survey");
+    console.log("HandleOPtIn1 page", page);
+    console.log("HandleOPtIn2 page", page);
     let chatBotCurrentQuestion = state.currentQuestion;
     console.log(state.currentQuestion, "handleOptIn props", props);
 
@@ -120,6 +128,12 @@ const ActionProvider = (props) => {
     }));
   };
   const handleKnowMore = () => {
+    console.log("Handle know more started");
+    console.log("Handle know more0 page", page);
+
+    setPage("Survey");
+    console.log("Handle know more page1", page);
+    console.log("Handle know more page2", page);
     const botMessage = createChatBotMessage("You have selected Know More", {
       widget: "generalOptions",
     });

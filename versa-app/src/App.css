@@ -10,6 +10,13 @@
   width: 375px !important;
   margin: 0 auto !important;
 } */
+
+.react-chatbot-kit-chat-inner-container {
+  height: 600px;
+  background-color: #fff;
+  border-radius: 3px;
+  border-radius: 5px;
+}
 .react-chatbot-kit-chat-input-container {
   position: sticky !important;
   bottom: 0 !important;
