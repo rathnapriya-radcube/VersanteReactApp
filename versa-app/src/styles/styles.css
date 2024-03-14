@@ -120,6 +120,20 @@ height:100px;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
 }
+.tooltip-button-welcome-page {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  color: white;
+  background-color: #034efc;
+  border: none;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
 .header-outer-div-survey-page {
   background-color: #034efc;
   padding: 5px;
@@ -129,18 +143,70 @@ height:100px;
   justify-content: center;
   align-items: center;
 }
+
+.tooltip-button-survey-page {
+  position: absolute;
+  right: 1px;
+  top: 16px;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 20px;
+  padding: 0px;
+  color: white;
+  background-color: #034efc;
+  border: none;
+  font-size: 8px;
+  font-family: "Poppins", sans-serif;
+}
+
 .header-para-survey-page {
+  margin: 0 auto;
   text-align: center;
-  font-size: 15px;
+  font-size: 12px;
   font-family: "Poppins", sans-serif;
   padding-bottom: 5px;
 }
-.image-survey-page {
+.image-outer-div-survey-page {
+  position: absolute;
+  margin-bottom: -60px; /* Pull the image out of the parent div */
+  z-index: 1;
   width: 50px !important;
   height: 50px !important;
+  background-color: aquamarine;
   border-radius: 50%;
-  object-fit: cover;
-  position: absolute;
-  margin-bottom: -75px; /* Pull the image out of the parent div */
+  border: 1px solid rgb(45, 10, 43);
+
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  clip-path: circle(50% at 50% 50%);
+  background: conic-gradient(
+    red 0deg 18deg,
+    /* Adjust colors and angles for each segment */ blue 18deg 36deg,
+    green 36deg 54deg,
+    yellow 54deg 72deg,
+    orange 72deg 90deg,
+    pink 90deg 108deg,
+    purple 108deg 126deg,
+    cyan 126deg 144deg,
+    lightblue 144deg 162deg,
+    lime 162deg 180deg,
+    teal 180deg 198deg,
+    brown 198deg 216deg,
+    indigo 216deg 234deg,
+    lavender 234deg 252deg,
+    maroon 252deg 270deg,
+    olive 270deg 288deg,
+    peachpuff 288deg 306deg,
+    peru 306deg 324deg,
+    rebeccapurple 324deg 342deg,
+    whitesmoke 342deg 360deg
+  );
+}
+.image-survey-page {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  border: 1px solid rgb(45, 10, 43);
   z-index: 1;
 }
