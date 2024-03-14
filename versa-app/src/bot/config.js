@@ -1,34 +1,16 @@
 // in config.js
-import { createChatBotMessage } from "react-chatbot-kit";
+// import { createChatBotMessage } from "react-chatbot-kit";
 import logo from "../assets/images/profile.jpg"; // Import the image
 import GeneralOptions from "./widgets/GeneralOptions";
 import YNQuestions from "./widgets/YNQuestions";
+import CustomMessage from "./CustomMessage";
+import Header from "./Header";
 
-const botName = "Versa OSM Buddy";
+import { createChatBotMessage, createCustomMessage } from "react-chatbot-kit";
+const botName = "OSM Buddy";
 
 const config = {
-  initialMessages: [
-    createChatBotMessage(
-      `Hey there, I'm Versa, your OSM buddy. Your go-to shop for anything related to Oral, Sexual and Mental health awareness and care connections.  \n\n
-    `,
-      {
-        withAvatar: false,
-        delay: 0,
-      }
-    ),
-    createChatBotMessage(
-      `Simply spend 2-3 minutes to check your "Chance score" for guided awareness and timely care. Don't worry, your scores are totally confidential and anonymous. You can share the scores with your provider, only if you want. And remember, you can always delete this chat once you've got your "Chance score"! \n\n
-  `,
-      {
-        withAvatar: false,
-        delay: 200,
-      }
-    ),
-    createChatBotMessage(
-      `Go, get started by clicking "Opt in" or "Know More”`,
-      { widget: "generalOptions", withAvatar: false, delay: 300 }
-    ),
-  ],
+  initialMessages: [createCustomMessage("Test", "custom")],
   botName: botName,
   customStyles: {
     botMessageBox: {
@@ -39,6 +21,7 @@ const config = {
     },
   },
   state: {
+    page: "Welcome",
     questionList: [
       {
         questionNumber: 1,
@@ -76,31 +59,14 @@ const config = {
       widgetName: "ynQuestion",
       widgetFunc: (props) => <YNQuestions {...props} />,
     },
+    {
+      widgetName: "customMessage",
+      widgetFunc: (props) => <CustomMessage {...props} />,
+    },
   ],
   customComponents: {
     // Replaces the default header
-    header: () => (
-      <div
-        style={{
-          backgroundColor: "#034efc",
-          padding: "35px",
-          // borderBottomLeftRadius: "15px",
-          // borderBottomRightRadius: "15px",
-          color: "white",
-        }}
-      >
-        {botName}
-        <img
-          style={{
-            width: "100px",
-            height: "auto",
-            borderRadius: "100px",
-            marginTop: "5px",
-          }}
-          src={logo}
-        ></img>
-      </div>
-    ),
+    header: (props) => <Header {...props} />,
     //  // Replaces the default bot avatar
     botAvatar: (props) => <></>,
     //  // Replaces the default bot chat message container
@@ -109,6 +75,9 @@ const config = {
     //  userAvatar: (props) => <MyCustomAvatar {...props} />,
     //  // Replaces the default user chat message
     //  userChatMessage: (props) => <MyCustomUserChatMessage {...props} />
+  },
+  customMessages: {
+    custom: (props) => <CustomMessage {...props} />,
   },
 };
 
