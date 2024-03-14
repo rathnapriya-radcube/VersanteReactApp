@@ -11,6 +11,10 @@ const CustomMessage = (props) => {
     console.log("Before", outerWrapperContainer);
     outerWrapperContainer.style.display = "none";
     console.log("After", outerWrapperContainer);
+    let initialPaddingDiv = document.createElement("div");
+    initialPaddingDiv.style.padding = "20px";
+    initialPaddingDiv.style.backgroundColor = "#cdc7e3fd";
+    outerWrapperContainer.insertAdjacentElement("afterend", initialPaddingDiv);
     props.actions.handleOptIn();
   };
   const handleKnowMoreClick = () => {
@@ -20,6 +24,10 @@ const CustomMessage = (props) => {
     console.log("Before", outerWrapperContainer);
     outerWrapperContainer.style.display = "none";
     console.log("After", outerWrapperContainer);
+    let initialPaddingDiv = document.createElement("div");
+    initialPaddingDiv.style.padding = "20px";
+    initialPaddingDiv.style.backgroundColor = "#cdc7e3fd";
+    outerWrapperContainer.insertAdjacentElement("afterend", initialPaddingDiv);
     props.actions.handleKnowMore();
   };
   return (
