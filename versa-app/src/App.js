@@ -8,7 +8,6 @@ function App() {
   return (
     <PageContext.Provider value={{ page, setPage }}>
       <div className="App">
-        <p>Hello</p>
         <ChatBotComponent />
       </div>
     </PageContext.Provider>

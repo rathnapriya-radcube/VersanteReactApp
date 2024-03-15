@@ -5,11 +5,12 @@
   background-color: rgb(234, 234, 234) !important;
   position: relative;
 }
-/* .react-chatbot-kit-chat-container {
+.react-chatbot-kit-chat-container {
   position: relative !important;
-  width: 375px !important;
+  width: 275px !important;
   margin: 0 auto !important;
-} */
+  border-radius: 20px;
+}
 
 .react-chatbot-kit-chat-inner-container {
   height: 600px;
