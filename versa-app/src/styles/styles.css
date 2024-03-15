@@ -43,6 +43,7 @@ height:100px;
   align-items: center;
   flex-direction: column;
 }
+
 .image-container {
   height: 10%;
   width: 100%;
@@ -209,4 +210,52 @@ height:100px;
   border-radius: 50%;
   border: 1px solid rgb(45, 10, 43);
   z-index: 1;
+}
+
+/*Tool-tip*/
+.outer-container-parent {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: center; /* Horizontally center the container */
+  align-items: center; /* Vertically center the container */
+  height: 100vh; /* Full height of the viewport */
+  position: relative;
+}
+
+#containerA {
+  background-color: rgba(205, 199, 227, 0.993);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0%;
+  z-index: 999;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+#paragraph {
+  width: 100%;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+}
+#heading {
+  padding-top: 10px;
+  padding-left: 40px;
+  padding-bottom: 0px;
+  width: 100%;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+#paragraph li {
+  padding-left: 5px;
+  margin-right: 20px;
+}
+#button {
+  margin: 10px auto;
+  background-color: #034efc;
+  color: #ffffff;
 }
