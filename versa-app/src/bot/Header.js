@@ -6,7 +6,8 @@ import { usePageContext } from "../PageContext";
 const Header = (props) => {
   const botName = "OSMs Buddy";
   const { page, setPage } = usePageContext();
-  const [showToolTip, setShowToolTip] = useState(true);
+  // const [showToolTip, setShowToolTip] = useState(true);
+  let showToolTip = false;
   console.log("Header props", props, "page");
   //   const [page, setPage] = useState("Survey");
   // props.state.page === "welcome"
@@ -71,10 +72,10 @@ const Header = (props) => {
   };
   const handleWelcomeToolTip = () => {
     console.log("handleWelcomeToolTip ", showToolTip);
-
+    showToolTip = !showToolTip;
     setTimeout(displayToolTip, 0);
 
-    setShowToolTip((prevState) => !prevState); // Update the state
+    // setShowToolTip((prevState) => !prevState);
 
     // Call displayToolTip after state has been updated
   };
@@ -97,7 +98,7 @@ const Header = (props) => {
           <p className="header-para-survey-page"> {botName}</p>
           <button
             className="tooltip-button-survey-page"
-            onClick={handleSurveyToolTip}
+            onClick={handleWelcomeToolTip}
           >
             🛈 How to Use?
           </button>
