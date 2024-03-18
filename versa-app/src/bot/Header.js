@@ -11,6 +11,25 @@ const Header = (props) => {
   console.log("Header props", props, "page");
   //   const [page, setPage] = useState("Survey");
   // props.state.page === "welcome"
+
+  // const displayTranslate = () => {
+  //   console.log("Calling Display Translate");
+  //   const translateButton = document.createElement("button");
+  //   translateButton.href = "https://example.com";
+  //   translateButton.className = "translate-button";
+  //   const translateImage = document.createElement("img");
+  //   translateImage.src = "image.jpg";
+  //   translateImage.className = "translate-button-icon";
+
+  //   translateButton.appendChild(translateImage);
+  //   const chatInput = document.getElementsByClassName(
+  //     "react-chatbot-kit-chat-input"
+  //   )[0];
+  //   console.log("chatinput", chatInput);
+  //   chatInput.parentNode.insertBefore(translateButton, chatInput);
+  // };
+  // displayTranslate();
+  const displayTrash = () => {};
   const displayToolTip = () => {
     console.log(" displayToolTip showToolTip", showToolTip);
     if (showToolTip) {
