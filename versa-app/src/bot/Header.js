@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import logo from "../assets/images/profile.jpg"; // Import the image
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePageContext } from "../PageContext";
+// import { Languages } from "lucide-react";
+import { Trash2 } from "lucide-react";
 
 const Header = (props) => {
   const botName = "OSMs Buddy";
@@ -28,7 +30,33 @@ const Header = (props) => {
   //   console.log("chatinput", chatInput);
   //   chatInput.parentNode.insertBefore(translateButton, chatInput);
   // };
-  // displayTranslate();
+  useEffect(() => {
+    if (page === "Welcome") {
+      displayTranslate();
+    }
+  }, [page]);
+
+  const displayTranslate = () => {
+    console.log("Calling Display Translate");
+    console.log("doc2", document);
+    if (document.getElementsByClassName("translate-button").length === 0) {
+      console.log("Creating translate button");
+      const translateButton = document.createElement("button");
+      translateButton.className = "translate-button";
+      const translateImage = document.createElement("img");
+      translateImage.src = "../assets/images/trash.svg";
+      translateImage.className = "translate-button-icon";
+
+      translateButton.appendChild(translateImage);
+      // const translateButton =      document.getElementsByClassName("translate-button")[0];
+      const chatInput = document.getElementsByClassName(
+        "react-chatbot-kit-chat-input-form"
+      )[0];
+      console.log("chatinput", chatInput);
+      chatInput.parentNode.insertBefore(translateButton, chatInput);
+    }
+  };
+
   const displayTrash = () => {};
   const displayToolTip = () => {
     console.log(" displayToolTip showToolTip", showToolTip);
@@ -111,6 +139,16 @@ const Header = (props) => {
           >
             🛈
           </button>
+          <Trash2 />
+
+          {/* <button className="translate-button">
+            <img
+              src="image.jpg"
+              alt="Translate"
+              className="translate-button-icon"
+            />
+          </button> */}
+          {/* {displayTranslate()} */}
         </div>
       ) : (
         <div className="header-outer-div-survey-page">
