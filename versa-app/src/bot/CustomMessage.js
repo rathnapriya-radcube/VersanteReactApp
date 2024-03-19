@@ -5,6 +5,24 @@ import "../styles/styles.css";
 const CustomMessage = (props) => {
   console.log("custom message", props);
 
+  // const displayTranslate = () => {
+  //   console.log("Calling Display Translate 2");
+  //   console.log("doc2", document);
+  //   const translateButton = document.createElement("button");
+  //   // translateButton.href = "https://example.com";
+  //   translateButton.className = "translate-button";
+  //   const translateImage = document.createElement("img");
+  //   translateImage.src = "image.jpg";
+  //   translateImage.className = "translate-button-icon";
+
+  //   translateButton.appendChild(translateImage);
+  //   const chatInput = document.getElementsByClassName(
+  //     "react-chatbot-kit-chat-input"
+  //   )[0];
+  //   console.log("chatinput", chatInput);
+  //   chatInput.parentNode.insertBefore(translateButton, chatInput);
+  // };
+
   let showKnowMoreToolTip = false;
   const displayToolTip = () => {
     console.log(" displayToolTip showKnowMoreToolTip", showKnowMoreToolTip);
@@ -136,6 +154,8 @@ const CustomMessage = (props) => {
               Know More
             </button>
           </div>
+          {/* {console.log("call disp")}
+          {displayTranslate()} */}
         </div>
       </div>
     </div>

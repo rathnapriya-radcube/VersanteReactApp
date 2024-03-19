@@ -70,7 +70,7 @@ const YNQuestions = (props) => {
       };
     });
     console.log("Calling the optin from handle yes");
-    // handleOptIn();
+    props.actionProvider.handleOptIn();
   };
   const options = [
     {
@@ -86,7 +86,7 @@ const YNQuestions = (props) => {
   ];
   console.log("Ynprops", props, options);
 
-  return <YNOptions onClick={handleButton} options={options} />;
+  return <YNOptions buttonHandler={handleButton} options={options} />;
 };
 
 export default YNQuestions;
