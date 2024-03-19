@@ -3,6 +3,7 @@
 import logo from "../assets/images/profile.jpg"; // Import the image
 import GeneralOptions from "./widgets/GeneralOptions";
 import YNQuestions from "./widgets/YNQuestions";
+import Result from "./widgets/Result";
 import CustomMessage from "./CustomMessage";
 import Header from "./Header";
 
@@ -62,6 +63,10 @@ const config = {
     {
       widgetName: "customMessage",
       widgetFunc: (props) => <CustomMessage {...props} />,
+    },
+    {
+      widgetName: "result",
+      widgetFunc: (props) => <Result {...props} />,
     },
   ],
   customComponents: {
