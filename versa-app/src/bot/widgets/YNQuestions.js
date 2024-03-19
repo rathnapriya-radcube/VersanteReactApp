@@ -70,7 +70,7 @@ const YNQuestions = (props) => {
       };
     });
     console.log("Calling the optin from handle yes");
-    // handleOptIn();
+    props.actionProvider.handleOptIn();
   };
   const options = [
     {
