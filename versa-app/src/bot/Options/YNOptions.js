@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const YNOptions = ({ options, onClick }) => {
-  const [disabledButtons, setDisabledButtons] = useState({});
+const YNOptions = ({ options, buttonHandler }) => {
+  const [disabledButtons, setDisabledButtons] = useState(false);
   console.log("YNOptions ", options);
   const handleClick = (option) => {
-    onClick(option.name);
-    setDisabledButtons((prev) => ({ ...prev, [option.id]: true }));
     console.log("disabled buttons", option.name, "---", disabledButtons);
     const button = document.getElementById(option.id);
     if (button) {
@@ -18,13 +16,16 @@ const YNOptions = ({ options, onClick }) => {
         button
       );
     }
+    // setDisabledButtons((prev) => ({ ...prev, [option.id]: true }));
+    setDisabledButtons(true);
+    buttonHandler(option.name);
   };
   const markup = options.map((option) => (
     <button
       key={option.id}
       id={option.id}
       onClick={() => handleClick(option)}
-      disabled={disabledButtons[option.id]}
+      disabled={disabledButtons}
     >
       {option.name}
     </button>

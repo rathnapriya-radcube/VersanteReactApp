@@ -86,7 +86,7 @@ const YNQuestions = (props) => {
   ];
   console.log("Ynprops", props, options);
 
-  return <YNOptions onClick={handleButton} options={options} />;
+  return <YNOptions buttonHandler={handleButton} options={options} />;
 };
 
 export default YNQuestions;
