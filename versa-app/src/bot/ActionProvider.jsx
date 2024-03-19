@@ -93,24 +93,32 @@ const ActionProvider = (props) => {
     setPage("Survey");
     console.log("HandleOPtIn1 page", page);
     console.log("HandleOPtIn2 page", page);
+    let botMessage;
     let chatBotCurrentQuestion = state.currentQuestion;
-    console.log(state.currentQuestion, "handleOptIn props", props);
+    if (chatBotCurrentQuestion > state.questionList.length) {
+      console.log("no more qs", chatBotCurrentQuestion);
+      botMessage = createChatBotMessage(`No More Questions`, {
+        widget: "result",
+      });
+    } else {
+      console.log(state.currentQuestion, "handleOptIn props", props);
 
-    let chatBotQuestionObj = state.questionList.filter(
-      (x) => x.questionNumber === chatBotCurrentQuestion
-    );
-    let chatBotQuestion = chatBotQuestionObj[0].question;
-    console.log(
-      "cq",
-      chatBotCurrentQuestion,
-      "chatBotQuestionObj",
-      chatBotQuestionObj,
-      "qn",
-      chatBotQuestion
-    );
-    const botMessage = createChatBotMessage(`${chatBotQuestion}`, {
-      widget: "ynQuestion",
-    });
+      let chatBotQuestionObj = state.questionList.filter(
+        (x) => x.questionNumber === chatBotCurrentQuestion
+      );
+      let chatBotQuestion = chatBotQuestionObj[0].question;
+      console.log(
+        "cq",
+        chatBotCurrentQuestion,
+        "chatBotQuestionObj",
+        chatBotQuestionObj,
+        "qn",
+        chatBotQuestion
+      );
+      botMessage = createChatBotMessage(`${chatBotQuestion}`, {
+        widget: "ynQuestion",
+      });
+    }
     setState((prev) => ({
       ...prev,
       messages: [...prev.messages, botMessage],
